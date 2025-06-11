@@ -1,0 +1,98 @@
+<html dir="ltr" lang="en-GB" style="">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#002147">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="apple-itunes-app" content="app-id=480883488">
+  <title>Redirect Not Found (404)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  
+   
+   <style>
+
+    * {
+      font-family: Lato;
+    }
+
+    .center {
+      text-align: center;
+      margin: 50px 50px 50px 50px
+    }
+
+    a {
+        color: #0077c8;
+        text-decoration: none;
+    }
+
+    body {
+      font-size: 1rem;
+      font-weight: normal;
+      line-height: 1.5;
+      color: c$#2d3b45;var(--ic-brand-font-color-dark);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .screenreader-only, .screenreader-only-tool {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+      transform: translatez(0);
+   }
+
+ </style>
+  
+</head>
+
+<body class="center">
+
+	<h1 class="page-title">Redirect Not Found (404)</h1>
+	
+	<img src="lego-detective.png" alt="'searching' graphic" height="200" >
+  
+	<p>We could not find the page you are looking for: <strong id=url></strong>. 
+	The incorrect link is found on this Canvas page: <strong id="referrer"></strong>. </p>
+	
+	
+	<p>Please use the email link below to report this to the Canvas Service Desk, or, alternatively you can send an email 
+	to canvas@it.ox.ac.uk and include the two links given above (just copy the above paragraph into an email). </p>
+	
+  	<p id="report-link"></p>
+  	 
+   <script  type="text/javascript">
+   
+	   const currentUrl = window.location.href;
+	   const referrerUrl = document.referrer || "No referrer";
+	
+	   // Display the current URL on the page
+	   document.getElementById('url').textContent = currentUrl;
+	   document.getElementById('referrer').textContent = referrerUrl;
+	
+	   // Build the body text
+	   const emailBody = 
+	     `The user was incorrectly redirected to:\n${currentUrl}\n\nThis link needs correcting\n\nReferrer page:\n${referrerUrl}`;
+	
+	   // Encode the body text for mailto
+	   const encodedBody = encodeURIComponent(emailBody);
+	
+	   // Build the mailto link
+	   const mailtoHref = `mailto:canvas@it.ox.ac.uk?subject=Incorrect%20redirect&body=${encodedBody}`;
+	
+	   // Insert the mailto link into the page
+	   document.getElementById('report-link').innerHTML =
+	     `<a href="${mailtoHref}">Report the broken link to the Canvas Service Desk</a>`;  
+	   </script>
+  
+
+</body>
+</html>
