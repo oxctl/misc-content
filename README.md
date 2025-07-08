@@ -1,7 +1,7 @@
 # misc-content
 A repo for miscellaneous web pages used by Canvas. Surfaced in Cloudflare.
 
-NB everything NOT in /redirects has been moved to https://github.com/oxctl/static' 
+NB everything NOT in /redirects has been moved to https://github.com/oxctl/static/public
 
 ## '/redirects' folder
 The files in here are used by the 'redirects' service hosted in Cloudflare. This service has a couple of web pages (incl [index.html](https://redirect.canvas.ox.ac.uk/index.html) and [404.html](https://redirect.canvas.ox.ac.uk/404)). 
